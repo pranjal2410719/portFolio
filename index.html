@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pranjal Yadav - Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0a192f",      // Deep navy blue
+              secondary: "#14b8a6",    // Teal
+              accent: "#38bdf8",       // Sky blue accent
+              background: "#f8fafc",   // Light background
+              card: "#1e293b",         // Card dark navy
+              text: "#e2e8f0",         // Light text
+            },
+            fontFamily: {
+              sans: ["Inter", "Poppins", "ui-sans-serif", "system-ui"],
+              heading: ["Pacifico", "cursive"],
+            },
+            borderRadius: {
+              button: "10px",
+            },
+          },
+        },
+      };
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+    
+    <!-- Custom CSS Files -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Dynamic Background Circles -->
+    <div id="dynamic-bg">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+    </div>
+    
+    <!-- Header Section -->
+    <header class="relative bg-gradient-to-br from-blue-50 via-white to-teal-50 text-gray-900 overflow-hidden border-b border-blue-100 shadow-sm">
+      <div class="container mx-auto px-6 py-16 relative z-20">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+          <div class="text-center md:text-left fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2" style="font-family: 'Poppins', sans-serif;">
+              Pranjal Yadav
+            </h1>
+            <p class="text-base md:text-lg text-gray-600 mb-6" style="font-family: 'Poppins', sans-serif;">
+              B.Tech Student @PSIT Kanpur &bull; Web Developer &bull; UI/UX Designer
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+              <a
+                href="#portfolio"
+                class="btn-animated bg-blue-600 hover:bg-blue-700 text-yellow-400 px-6 py-2 rounded font-medium shadow transition"
+                style="font-family: 'Poppins', sans-serif;"
+                >View My Work</a
+              >
+              <a
+                href="#hackathon"
+                class="btn-animated bg-blue-600 hover:bg-blue-700 text-yellow-400 px-6 py-2 rounded font-medium shadow transition"
+                style="font-family: 'Poppins', sans-serif;"
+                >Hackathon Experience</a
+              >
+              <a
+                href="#contact"
+                class="btn-animated bg-blue-600 hover:bg-blue-700 text-yellow-400 px-6 py-2 rounded font-medium shadow transition"
+                style="font-family: 'Poppins', sans-serif;"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+          <div class="fade-in">
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Personal Profile Glass Card -->
+    <div class="container mx-auto px-6 -mt-12 mb-12 relative z-30">
+      <div class="glass-card bg-white rounded-lg overflow-hidden shadow-md flex flex-col md:flex-row items-center gap-8 p-8 fade-in personal-profile-card">
+        <div class="glass-highlight"></div>
+        <img src="https://static.readdy.ai/image/7825b75c4f4fba00f775fe73c0ba105e/b37ecde5f280c35210915e94685bac42.png" alt="Pranjal Yadav" class="w-28 h-28 rounded-full object-cover border-4 border-blue-100 shadow profile-img mb-4 md:mb-0">
+        <div>
+          <h2 class="text-2xl font-bold mb-1 text-primary" style="font-family: 'Poppins', sans-serif;">Pranjal Yadav</h2>
+          <p class="text-gray-700 mb-2">Kanpur, India &bull; B.Tech @ PSIT Kanpur</p>
+          <p class="mb-2 text-gray-600">Web Developer &bull; UI/UX Designer &bull; Tech Enthusiast</p>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span class="skill-tag bg-secondary text-white">HTML</span>
+            <span class="skill-tag bg-secondary text-white">CSS</span>
+            <span class="skill-tag bg-secondary text-white">JavaScript</span>
+            <span class="skill-tag bg-secondary text-white">Python</span>
+            <span class="skill-tag bg-secondary text-white">C/C++</span>
+            <span class="skill-tag bg-secondary text-white">UI/UX (Figma)</span>
+          </div>
+          <div class="text-gray-500 text-sm mb-1">
+            <span>Problem-solving</span> &bull; <span>Creativity</span> &bull; <span>Continuous Learning</span> &bull; <span>Clean Design Thinking</span>
+          </div>
+          <div class="text-gray-500 text-sm">
+            <span>Interests:</span> Coding, Responsive Design, Modern Animations, Impactful Interfaces
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Include Section Files -->
+    <div id="about-section"></div>
+    <div id="certifications-section"></div>
+    <div id="hackathon-section"></div>
+    <div id="portfolio-section"></div>
+    <div id="skills-section"></div>
+    <div id="contact-section"></div>
+    
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/navigation.js"></script>
+    
+    <!-- Section Loading Script -->
+    <script>
+      // Function to load HTML sections
+      async function loadSection(sectionId, filePath) {
+        try {
+          const response = await fetch(filePath);
+          const html = await response.text();
+          document.getElementById(sectionId).innerHTML = html;
+        } catch (error) {
+          console.error(`Error loading section ${sectionId}:`, error);
+        }
+      }
+      
+      // Load all sections
+      document.addEventListener('DOMContentLoaded', async function() {
+        await Promise.all([
+          loadSection('about-section', 'sections/about.html'),
+          loadSection('certifications-section', 'sections/certifications.html'),
+          loadSection('hackathon-section', 'sections/hackathon.html'),
+          loadSection('portfolio-section', 'sections/projects.html'),
+          loadSection('skills-section', 'sections/skills.html'),
+          loadSection('contact-section', 'sections/contact.html')
+        ]);
+        
+        // Re-initialize animations and functionality after sections are loaded
+        if (typeof initializeAnimations === 'function') {
+          initializeAnimations();
+        }
+        if (typeof initializeNavigation === 'function') {
+          initializeNavigation();
+        }
+        if (typeof initializeGlassmorphism === 'function') {
+          initializeGlassmorphism();
+        }
+      });
+    </script>
+  </body>
+</html>

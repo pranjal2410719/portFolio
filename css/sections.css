@@ -1,0 +1,156 @@
+/* Section-Specific Styles */
+
+/* Header Section */
+header {
+  position: relative;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0fdfa 100%);
+  overflow: hidden;
+}
+
+/* About Section */
+#about {
+  background: #ffffff;
+}
+
+/* Skills Section */
+#skills {
+  background: #ffffff;
+}
+
+#skills .skill-category {
+  margin-bottom: 2rem;
+}
+
+/* Certifications Section */
+#certifications {
+  background: #ffffff;
+}
+
+.certification-card {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 16px 0 rgba(26, 26, 26, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px 0 rgba(61, 44, 41, 0.6);
+}
+
+.certification-card img {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Hackathon Section */
+#hackathon {
+  background: #f8fafc;
+}
+
+.hackathon-card {
+  max-width: 4rem;
+  margin: 0 auto;
+}
+
+.hackathon-image {
+  height: 16rem;
+}
+
+@media (min-width: 768px) {
+  .hackathon-image {
+    height: 20rem;
+  }
+}
+
+/* Portfolio Section */
+#portfolio {
+  background: #f8fafc;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-image {
+  height: 14rem;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+/* Contact Section */
+#contact {
+  background: #f8fafc;
+}
+
+.contact-form {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+/* Footer Sections */
+.contact-info-section {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.auth-socials-section {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+footer {
+  background: #0a192f;
+  color: #ffffff;
+}
+
+/* Personal Profile Card */
+.personal-profile-card {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  margin-top: -3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 30;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hackathon-card {
+    max-width: 100%;
+  }
+  
+  .personal-profile-card {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Section Spacing */
+section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+}
