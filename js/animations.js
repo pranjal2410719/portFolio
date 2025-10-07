@@ -2,7 +2,7 @@
 
 function initializeAnimations() {
   initializeFadeInAnimation();
-  initializeTypewriterEffect("h1", ["Pranjal Yadav", "Web Developer", "UI/UX Designer"]);
+  initializeElegantTypewriter("h1", ["Pranjal Yadav", "Web Developer", "UI/UX Designer"]);
   animateProgressBars();
   initializeReveal();
 }
@@ -28,60 +28,48 @@ function initializeFadeInAnimation() {
   });
 }
 
-// Improved typewriter effect that works with CSS
-function initializeTypewriterEffect(selector, texts) {
-  const typeTarget = document.querySelector(selector);
-  if (!typeTarget) return;
+// Reliable typing effect without glitches
+function initializeElegantTypewriter(selector, texts) {
+  const element = document.querySelector(selector);
+  if (!element) return;
 
-  // Clear and prepare the element
-  typeTarget.innerHTML = '';
-  typeTarget.classList.add('typewriter-cursor');
-  
   let textIndex = 0;
-  let charIndex = 0;
   let isDeleting = false;
-  let typingSpeed = 100;
-  let deletingSpeed = 50;
-  let pauseBetweenWords = 2000;
-
+  let typingSpeed = 150; // Lower = faster typing (50-150 recommended)
+  
+  // Add cursor
+  element.classList.add('professional-cursor');
+  
   function type() {
     const currentText = texts[textIndex];
+    const displayText = isDeleting 
+      ? currentText.substring(0, element.textContent.length - 1)
+      : currentText.substring(0, element.textContent.length + 1);
     
-    if (!isDeleting) {
-      // Typing forward
-      typeTarget.textContent = currentText.substring(0, charIndex + 1);
-      charIndex++;
-      
-      if (charIndex === currentText.length) {
-        // Finished typing - pause then start deleting
-        setTimeout(() => {
-          isDeleting = true;
-          type();
-        }, pauseBetweenWords);
-        return;
-      }
-    } else {
-      // Deleting
-      typeTarget.textContent = currentText.substring(0, charIndex - 1);
-      charIndex--;
-      
-      if (charIndex === 0) {
-        // Finished deleting - move to next word
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        
-        // Brief pause before next word
-        setTimeout(type, 500);
-        return;
-      }
+    element.textContent = displayText;
+    
+    if (!isDeleting && displayText === currentText) {
+      // Finished typing - pause then delete
+      setTimeout(() => {
+        isDeleting = true;
+        type();
+      }, 2000);
+      return;
     }
     
-    // Continue typing/deleting
-    const speed = isDeleting ? deletingSpeed : typingSpeed;
-    setTimeout(type, speed);
+    if (isDeleting && displayText === '') {
+      // Finished deleting - move to next text
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      setTimeout(type, 500);
+      return;
+    }
+    
+    setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
   }
-
-  // Start typing after a brief delay
+  
+  // Start with first text
+  element.textContent = '';
   setTimeout(type, 1000);
 }
 

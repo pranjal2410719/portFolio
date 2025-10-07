@@ -156,6 +156,18 @@ h1.typewriter-cursor:hover {
   text-shadow: none !important;
 }
 
+.professional-cursor::after {
+  content: '|';
+  animation: blink 1.2s infinite;
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 /* Text Animations */
 h1 {
   position: relative;
