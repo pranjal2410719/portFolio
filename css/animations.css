@@ -1,0 +1,207 @@
+/* Animation and Transition Effects */
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--dur-2) var(--ease-standard), transform var(--dur-2) var(--ease-standard);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dynamic Background Circles */
+#dynamic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle1 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #14b8a6, #38bdf8);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle2 {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(45deg, #38bdf8, #0a192f);
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.circle3 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #0a192f, #14b8a6);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Glassmorphism Highlight Effect */
+.glass-highlight {
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 4;
+}
+
+/* Hover Transitions */
+.transition-all {
+  transition: all var(--dur-1) var(--ease-standard);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth Transitions */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Image Hover Effects */
+.image-hover-scale {
+  transition: transform var(--dur-3) var(--ease-emphasized);
+}
+
+.image-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Typewriter Specific Styles */
+.typewriter-cursor {
+  position: relative;
+  display: inline-block;
+  min-height: 1.2em;
+  width: auto;
+}
+
+.typewriter-cursor::after {
+  content: '|';
+  position: absolute;
+  right: -8px;
+  animation: blink 1s infinite;
+  color: currentColor;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Fix for h1 transitions conflicting with typewriter */
+h1.typewriter-cursor {
+  transition: none !important;
+  transform: none !important;
+  text-shadow: none !important;
+}
+
+h1.typewriter-cursor:hover {
+  transform: none !important;
+  text-shadow: none !important;
+}
+
+/* Text Animations */
+h1 {
+  position: relative;
+  min-height: 1.2em;
+  display: inline-block;
+  width: auto;
+  will-change: opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Hover effect for header */
+h1:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    min-height: 1.1em;
+  }
+}
+
+/* Stagger Animation */
+.stagger-animation {
+  animation-delay: calc(var(--stagger) * 0.1s);
+}
+
+/* Reveal animation system */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px) scale(.98);
+  transition: opacity var(--dur-2) var(--ease-standard), transform var(--dur-2) var(--ease-standard);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.reveal.slide-left { transform: translateX(14px); }
+.reveal.slide-right { transform: translateX(-14px); }
+.reveal.fade-scale { transform: scale(.97); }
+
+/* Reduced motion accessiblity */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
